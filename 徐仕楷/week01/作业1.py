@@ -18,6 +18,7 @@ import matplotlib
 import torch
 import gensim
 import peft
+import numpy as np
 import transformers
 import fastapi
 from mypy.version import __version__ as mypy_version
