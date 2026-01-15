@@ -11,6 +11,7 @@ dataset = pd.read_csv("dataset.csv", sep="\t", header=None, nrows=10000)
 labels = dataset[1].unique()
 # print(labels)
 
+
 def text_calssify_using_ml(text: str) -> str:
     input_sententce = dataset[0].apply(lambda x: " ".join(jieba.lcut(x)))  # sklearn对中文处理
 
@@ -43,4 +44,4 @@ if __name__ == "__main__":
     text = '今天是周几'
     print("机器学习: ", text_calssify_using_ml(text))
     print("大语言模型: ", text_calssify_using_llm(f"""帮我进行文本分类：{text}。
-    输出的类别只能从如下中进行选择，不要添加其他字词:{labels}"""))
+    输出的类别只能从如下中进行选择:{labels},不要添加其他字词"""))
